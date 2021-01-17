@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="template_instructor" template="/WEB-INF/views/templates/template_instructor.jsp">
+        <put-attribute name="content" value="" />
+    </definition>
+    <definition name="instructor.dashboard.index" extends="template_instructor">
+        <put-attribute name="content" value="/WEB-INF/views/instructor/dashboard/index.jsp"/>
+    </definition>
+
+    <definition name="instructor.category.index" extends="template_instructor">
+        <put-attribute name="content" value="/WEB-INF/views/instructor/category/index.jsp"/>
+    </definition>
+
+    <definition name="instructor.blog.index" extends="template_instructor">
+        <put-attribute name="content" value="/WEB-INF/views/instructor/blog/index.jsp" />
+    </definition>
+    <definition name="instructor.blog.display" extends="template_instructor">
+        <put-attribute name="content" value="/WEB-INF/views/instructor/blog/blog.jsp" />
+    </definition>
+    <definition name="instructor.blog.new" extends="template_instructor">
+        <put-attribute name="content" value="/WEB-INF/views/instructor/blog/new.jsp" />
+    </definition>
+    <definition name="instructor.blog.edit" extends="template_instructor">
+        <put-attribute name="content" value="/WEB-INF/views/instructor/blog/edit.jsp"/>
+    </definition>
+
+    <definition name="instructor.course.index" extends="template_instructor">
+        <put-attribute name="content" value="/WEB-INF/views/instructor/course/index.jsp"/>
+    </definition>
+    <definition name="instructor.course.new" extends="template_instructor">
+        <put-attribute name="content" value="/WEB-INF/views/instructor/course/new.jsp"/>
+    </definition>
+    <definition name="instructor.course.edit" extends="template_instructor">
+        <put-attribute name="content" value="/WEB-INF/views/instructor/course/edit.jsp"/>
+    </definition>
+    <definition name="instructor.course.enroll" extends="template_instructor">
+        <put-attribute name="content" value="/WEB-INF/views/instructor/course/enroll.jsp"/>
+    </definition>
+
+    <definition name="instructor.lesson.index" extends="template_instructor">
+        <put-attribute name="content" value="/WEB-INF/views/instructor/lesson/index.jsp"/>
+    </definition>
+    <definition name="instructor.lesson.new" extends="template_instructor">
+        <put-attribute name="content" value="/WEB-INF/views/instructor/lesson/new.jsp"/>
+    </definition>
+    <definition name="instructor.lesson.edit" extends="template_instructor">
+        <put-attribute name="content" value="/WEB-INF/views/instructor/lesson/edit.jsp"/>
+    </definition>
+    <definition name="instructor.lesson.display" extends="template_instructor">
+        <put-attribute name="content" value="/WEB-INF/views/instructor/lesson/lesson.jsp"/>
+    </definition>
+
+    <definition name="instructor.review.index" extends="template_instructor">
+        <put-attribute name="content" value="/WEB-INF/views/instructor/review/index.jsp"/>
+    </definition>
+
+</tiles-definitions>

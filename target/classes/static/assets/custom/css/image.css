@@ -1,0 +1,53 @@
+
+/*For thumbnail images for comment, discussion, reply*/
+.circular--landscape {
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.comment--structure{
+    display: inline-block;
+    position: relative;
+    height: 50px;
+    padding-left: 1em;
+    padding-top:10px;
+}
+.comment--structure > div{
+    padding-left: 1.5em;
+}
+
+.circular--landscape > img {
+    width: auto;
+    height: 100%;
+}
+.circular--portrait {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.circular--portrait img {
+    width: 100%;
+    height: auto;
+}
+
+/*For profile image*/
+.circular--landscape--profile {
+    display: inline-block;
+    position: relative;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.circular--landscape-profile img {
+    width: auto;
+    height: 100%;
+    margin-left: -100px;
+}

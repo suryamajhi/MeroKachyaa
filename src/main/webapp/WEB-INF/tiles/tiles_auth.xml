@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="template_auth" template="/WEB-INF/views/templates/template_empty.jsp">
+        <put-attribute name="content"/>
+    </definition>
+    <definition name="authentication.login" extends="template_auth">
+        <put-attribute name="content" value="/WEB-INF/views/authentication/login.jsp"/>
+    </definition>
+    <definition name="authentication.register" extends="template_auth">
+        <put-attribute name="content" value="/WEB-INF/views/authentication/register.jsp" />
+    </definition>
+</tiles-definitions>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="template_admin" template="/WEB-INF/views/templates/template_admin.jsp">
+        <put-attribute name="content" value="" />
+    </definition>
+    <definition name="admin.dashboard.index" extends="template_admin">
+        <put-attribute name="content" value="/WEB-INF/views/admin/dashboard/index.jsp"/>
+    </definition>
+    <definition name="admin.category.index" extends="template_admin">
+        <put-attribute name="content" value="/WEB-INF/views/admin/category/index.jsp"/>
+    </definition>
+    <definition name="admin.category.edit" extends="template_admin">
+        <put-attribute name="content" value="/WEB-INF/views/admin/category/edit.jsp"/>
+    </definition>
+    <definition name="admin.blog.index" extends="template_admin">
+        <put-attribute name="content" value="/WEB-INF/views/admin/blog/index.jsp" />
+    </definition>
+    <definition name="admin.blog.display" extends="template_admin">
+        <put-attribute name="content" value="/WEB-INF/views/admin/blog/blog.jsp" />
+    </definition>
+    <definition name="admin.blog.new" extends="template_admin">
+        <put-attribute name="content" value="/WEB-INF/views/admin/blog/new.jsp" />
+    </definition>
+    <definition name="admin.blog.edit" extends="template_admin">
+        <put-attribute name="content" value="/WEB-INF/views/admin/blog/edit.jsp"/>
+    </definition>
+    <definition name="admin.course.index" extends="template_admin">
+        <put-attribute name="content" value="/WEB-INF/views/admin/course/index.jsp"/>
+    </definition>
+    <definition name="admin.course.new" extends="template_admin">
+        <put-attribute name="content" value="/WEB-INF/views/admin/course/new.jsp"/>
+    </definition>
+    <definition name="admin.course.edit" extends="template_admin">
+        <put-attribute name="content" value="/WEB-INF/views/admin/course/edit.jsp"/>
+    </definition>
+    <definition name="admin.course.enroll" extends="template_admin">
+        <put-attribute name="content" value="/WEB-INF/views/admin/course/enroll.jsp"/>
+    </definition>
+    <definition name="admin.users.all" extends="template_admin">
+        <put-attribute name="content" value="/WEB-INF/views/admin/users/all.jsp"/>
+    </definition>
+    <definition name="admin.profile.index" extends="template_admin">
+        <put-attribute name="content" value="/WEB-INF/views/admin/profile/index.jsp"/>
+    </definition>
+    <definition name="admin.lesson.index" extends="template_admin">
+        <put-attribute name="content" value="/WEB-INF/views/admin/lesson/index.jsp"/>
+    </definition>
+    <definition name="admin.lesson.new" extends="template_admin">
+        <put-attribute name="content" value="/WEB-INF/views/admin/lesson/new.jsp"/>
+    </definition>
+    <definition name="admin.lesson.edit" extends="template_admin">
+        <put-attribute name="content" value="/WEB-INF/views/admin/lesson/edit.jsp"/>
+    </definition>
+    <definition name="admin.lesson.display" extends="template_admin">
+        <put-attribute name="content" value="/WEB-INF/views/admin/lesson/lesson.jsp"/>
+    </definition>
+    <definition name="admin.review.index" extends="template_admin">
+        <put-attribute name="content" value="/WEB-INF/views/admin/review/index.jsp"/>
+    </definition>
+
+    <definition name="admin.message.index" extends="template_admin">
+        <put-attribute name="content" value="/WEB-INF/views/admin/mailbox/index.jsp"/>
+    </definition>
+    <definition name="admin.message.compose" extends="template_admin">
+        <put-attribute name="content" value="/WEB-INF/views/admin/mailbox/compose.jsp"/>
+    </definition>
+    <definition name="admin.message.read" extends="template_admin">
+        <put-attribute name="content" value="/WEB-INF/views/admin/mailbox/read.jsp"/>
+    </definition>
+
+
+
+</tiles-definitions>
