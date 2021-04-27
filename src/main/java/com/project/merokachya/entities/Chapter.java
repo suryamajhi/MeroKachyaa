@@ -59,7 +59,7 @@ public class Chapter {
     }
 
     @ManyToOne
-    @JoinColumn(name = "course_id",referencedColumnName = "id",insertable = false, updatable = false)
+    @JoinColumn(name = "course_id", referencedColumnName = "id", insertable = false, updatable = false)
     public Course getCourseByCourseId() {
         return courseByCourseId;
     }

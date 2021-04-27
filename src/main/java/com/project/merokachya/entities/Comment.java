@@ -34,6 +34,7 @@ public class Comment {
     public void setContent(String content) {
         this.content = content;
     }
+
     @Column(name = "user_id")
     public Integer getUserId() {
         return userId;
@@ -42,6 +43,7 @@ public class Comment {
     public void setUserId(Integer userId) {
         this.userId = userId;
     }
+
     @Column(name = "blog_id")
     public Integer getBlogId() {
         return blogId;
@@ -61,20 +63,30 @@ public class Comment {
 
     @ManyToOne
     @JoinColumn(name = "blog_id", referencedColumnName = "id", insertable = false, updatable = false)
-    public Blog getBlogByBlogId(){ return blogByBlogId;}
+    public Blog getBlogByBlogId() {
+        return blogByBlogId;
+    }
 
-    public void setBlogByBlogId(Blog blogByBlogId) { this.blogByBlogId = blogByBlogId; }
+    public void setBlogByBlogId(Blog blogByBlogId) {
+        this.blogByBlogId = blogByBlogId;
+    }
 
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id", insertable = false, updatable = false)
-    public User getUserByUserId() { return userByUserId;}
+    public User getUserByUserId() {
+        return userByUserId;
+    }
 
-    public void setUserByUserId(User userByUserId){ this.userByUserId = userByUserId;}
+    public void setUserByUserId(User userByUserId) {
+        this.userByUserId = userByUserId;
+    }
 
     @OneToMany(mappedBy = "commentByCommentId")
-    public List<CommentReply> getCommentReplyById(){ return commentReplyById;}
+    public List<CommentReply> getCommentReplyById() {
+        return commentReplyById;
+    }
 
-    public void setCommentReplyById(List<CommentReply> commentReplyById){
+    public void setCommentReplyById(List<CommentReply> commentReplyById) {
         this.commentReplyById = commentReplyById;
     }
 }

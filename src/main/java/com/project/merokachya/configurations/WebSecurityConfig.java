@@ -20,46 +20,45 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
     @Bean
-    public BCryptPasswordEncoder bCryptPasswordEncoder(){
+    public BCryptPasswordEncoder bCryptPasswordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
     @Bean
     @Override
-    public AuthenticationManager authenticationManagerBean() throws Exception{
+    public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
 
-    
+
     @Override
-    public void configure(WebSecurity web) throws  Exception{
+    public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/resources/**");
     }
-
 
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                    .antMatchers("/","/courses","/blogs","/blog/{\\d+}","/about","/contact","/category","/courses","/login*","/register","/category","/category/{\\d+}","/course/{\\d+}").permitAll()
-                    .antMatchers("/admin/**").hasAuthority("ADMIN")
-                    .antMatchers("/instructor/**").hasAnyAuthority("INSTRUCTOR","ADMIN")
-                    .anyRequest().authenticated()
-                    .and()
+                .antMatchers("/", "/courses", "/blogs", "/blog/{\\d+}", "/about", "/contact", "/category", "/courses", "/login*", "/register", "/category", "/category/{\\d+}", "/course/{\\d+}","/aptitude").permitAll()
+                .antMatchers("/admin/**").hasAuthority("ADMIN")
+                .antMatchers("/instructor/**").hasAnyAuthority("INSTRUCTOR", "ADMIN")
+                .anyRequest().authenticated()
+                .and()
                 .formLogin()
-                    .loginPage("/login")
-                    .loginProcessingUrl("/loginProcess")
-                    .usernameParameter("email")
-                    .passwordParameter("password")
-                    .defaultSuccessUrl("/profile", true)
-                    .permitAll()
-                    .and()
+                .loginPage("/login")
+                .loginProcessingUrl("/loginProcess")
+                .usernameParameter("email")
+                .passwordParameter("password")
+                .defaultSuccessUrl("/aptitude", true)
+                .permitAll()
+                .and()
                 .logout()
-                    .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                    .logoutSuccessUrl("/login?logout")
-                    .permitAll()
-                    .and()
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                .logoutSuccessUrl("/login?logout")
+                .permitAll()
+                .and()
                 .csrf().disable();
     }
 }

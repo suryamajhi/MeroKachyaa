@@ -25,11 +25,11 @@ public class CategoryServiceImpl implements CategoryService {
         System.out.println(category);
         MultipartFile image = categoryRequest.getImage();
 
-        if(image != null && !isEmpty(image.getOriginalFilename())){
-            String fileName  = StringUtils.cleanPath(image.getOriginalFilename());
+        if (image != null && !isEmpty(image.getOriginalFilename())) {
+            String fileName = StringUtils.cleanPath(image.getOriginalFilename());
 
-            try{
-                if(fileName.contains("..")){
+            try {
+                if (fileName.contains("..")) {
                     throw new IOException("Sorry!Filename contains invalid path sequence");
                 }
                 category.setImage(image.getBytes());
@@ -38,22 +38,22 @@ public class CategoryServiceImpl implements CategoryService {
             } catch (IOException exception) {
                 exception.printStackTrace();
             }
-        }else{
+        } else {
             categoryRepository.save(category);
         }
     }
 
     @Override
-    public void editCategory(int id,CategoryRequest categoryRequest) {
+    public void editCategory(int id, CategoryRequest categoryRequest) {
         Category category = categoryRepository.findById(id).get();
         category.setName(categoryRequest.getName());
         MultipartFile image = categoryRequest.getImage();
 
-        if(image != null && !isEmpty(image.getOriginalFilename())){
-            String fileName  = StringUtils.cleanPath(image.getOriginalFilename());
+        if (image != null && !isEmpty(image.getOriginalFilename())) {
+            String fileName = StringUtils.cleanPath(image.getOriginalFilename());
 
-            try{
-                if(fileName.contains("..")){
+            try {
+                if (fileName.contains("..")) {
                     throw new IOException("Sorry!Filename contains invalid path sequence");
                 }
                 category.setImage(image.getBytes());

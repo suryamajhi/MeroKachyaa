@@ -40,28 +40,28 @@ public class CourseController {
     ReviewService reviewService;
 
     @GetMapping("/courses")
-    public String showCourses(ModelMap modelMap){
-        modelMap.addAttribute("courses",courseRepository.findAll());
-        modelMap.addAttribute("categories",categoryRepository.findAll());
+    public String showCourses(ModelMap modelMap) {
+        modelMap.addAttribute("courses", courseRepository.findAll());
+        modelMap.addAttribute("categories", categoryRepository.findAll());
         modelMap.addAttribute("blogs", blogRepository.findAll());
         return "home.courses";
     }
 
     @GetMapping("/course/{id}")
-    public String showCourse(@PathVariable int id, ModelMap modelMap){
-        modelMap.addAttribute("reviewAverage",reviewService.calculateAverage(id));
-        modelMap.addAttribute("course",courseRepository.findById(id).get());
-        modelMap.addAttribute("categories",categoryRepository.findAll());
+    public String showCourse(@PathVariable int id, ModelMap modelMap) {
+        modelMap.addAttribute("reviewAverage", reviewService.calculateAverage(id));
+        modelMap.addAttribute("course", courseRepository.findById(id).get());
+        modelMap.addAttribute("categories", categoryRepository.findAll());
         modelMap.addAttribute("blogs", blogRepository.findAll());
         return "home.course";
     }
 
     @GetMapping("/course/{id}/detail")
-    public String showDetail(@PathVariable int id, ModelMap modelMap){
+    public String showDetail(@PathVariable int id, ModelMap modelMap) {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         User user = userRepository.findByEmail(username);
 
-        if(userCourseRepository.findByUserIdAndCourseId(user.getId(),id)==null) {
+        if (userCourseRepository.findByUserIdAndCourseId(user.getId(), id) == null) {
             UserCourse userCourse = new UserCourse();
             userCourse.setCourseId(id);
             userCourse.setUserId(user.getId());

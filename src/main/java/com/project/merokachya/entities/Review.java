@@ -68,7 +68,7 @@ public class Review {
     }
 
     @ManyToOne
-    @JoinColumn(name = "course_id", referencedColumnName = "id" ,insertable = false, updatable = false)
+    @JoinColumn(name = "course_id", referencedColumnName = "id", insertable = false, updatable = false)
     public Course getCourseByCourseId() {
         return courseByCourseId;
     }
@@ -78,7 +78,7 @@ public class Review {
     }
 
     @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id", insertable = false,updatable = false)
+    @JoinColumn(name = "user_id", referencedColumnName = "id", insertable = false, updatable = false)
     public User getUserByUserId() {
         return userByUserId;
     }

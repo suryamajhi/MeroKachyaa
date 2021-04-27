@@ -22,6 +22,11 @@ public class ChapterRequest {
         this.serial = serial;
     }
 
-    public Integer getCourseId(){return courseId;}
-    public void setCourseId(Integer courseId){this.courseId = courseId;}
+    public Integer getCourseId() {
+        return courseId;
+    }
+
+    public void setCourseId(Integer courseId) {
+        this.courseId = courseId;
+    }
 }

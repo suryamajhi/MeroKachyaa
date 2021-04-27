@@ -24,11 +24,11 @@ public class DashboardController {
 
 
     @GetMapping("")
-    public String index(ModelMap modelMap){
-        modelMap.addAttribute("title","Dashboard");
+    public String index(ModelMap modelMap) {
+        modelMap.addAttribute("title", "Dashboard");
         modelMap.addAttribute("categoryCount", categoryRepository.count());
         modelMap.addAttribute("courseCount", courseRepository.count());
-        modelMap.addAttribute("userCount",userRepository.count());
+        modelMap.addAttribute("userCount", userRepository.count());
         return "admin.dashboard.index";
     }
 }

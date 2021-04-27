@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-public class ChapterServiceImpl implements ChapterService{
+public class ChapterServiceImpl implements ChapterService {
 
     @Autowired
     ChapterRepository chapterRepository;

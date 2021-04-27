@@ -26,12 +26,12 @@ public class LessonController {
 
     @Autowired
     CourseRepository courseRepository;
-    
+
     @Autowired
     ChapterRepository chapterRepository;
 
     @GetMapping("/lessons")
-    public String viewLessons(ModelMap modelMap){
+    public String viewLessons(ModelMap modelMap) {
         List<Lesson> lessons = lessonRepository.findAll();
         List<Course> courses = courseRepository.findAll();
         modelMap.addAttribute("lessons", lessons);
@@ -40,53 +40,55 @@ public class LessonController {
     }
 
     @PostMapping("/lesson/new")
-    public String newLesson(@RequestParam("course_id") int courseId,ModelMap modelMap){
+    public String newLesson(@RequestParam("course_id") int courseId, ModelMap modelMap) {
         Course course = courseRepository.findById(courseId).get();
         List<Chapter> chapters = course.getChaptersById();
-        modelMap.addAttribute("chapters",chapters);
+        modelMap.addAttribute("chapters", chapters);
         modelMap.addAttribute("courseName", course.getName());
         return "instructor.lesson.new";
     }
+
     @PostMapping("/lesson/add")
-    public String addLesson(@ModelAttribute("lessonRequest") LessonRequest lessonRequest){
+    public String addLesson(@ModelAttribute("lessonRequest") LessonRequest lessonRequest) {
         Lesson lesson = lessonService.addLesson(lessonRequest);
-        return "redirect:/instructor/course/edit/"+lesson.getChapterByChapterId().getCourseId();
+        return "redirect:/instructor/course/edit/" + lesson.getChapterByChapterId().getCourseId();
     }
+
     @GetMapping("/lesson/chapter/{chapterId}")
-    public String addLesson(@PathVariable int chapterId, ModelMap modelMap){
+    public String addLesson(@PathVariable int chapterId, ModelMap modelMap) {
         Chapter chapter = chapterRepository.findById(chapterId).get();
-        modelMap.addAttribute("chapter",chapter);
-        modelMap.addAttribute("courseName",chapter.getCourseByCourseId().getName());
+        modelMap.addAttribute("chapter", chapter);
+        modelMap.addAttribute("courseName", chapter.getCourseByCourseId().getName());
         return "instructor.lesson.new";
     }
-    
 
 
     @GetMapping("/lesson/edit/{id}")
-    public String showEditLesson(@PathVariable int id, ModelMap modelMap){
+    public String showEditLesson(@PathVariable int id, ModelMap modelMap) {
         Lesson lesson = lessonRepository.findById(id).get();
         List<Chapter> chapters = lesson.getChapterByChapterId().getCourseByCourseId().getChaptersById();
-        modelMap.addAttribute("chapters",chapters);
-        modelMap.addAttribute("lesson",lesson);
+        modelMap.addAttribute("chapters", chapters);
+        modelMap.addAttribute("lesson", lesson);
         return "instructor.lesson.edit";
     }
+
     @PostMapping("/lesson/edit/{id}")
-    public String editLesson(@PathVariable int id, @ModelAttribute("lessonRequest") LessonRequest lessonRequest){
+    public String editLesson(@PathVariable int id, @ModelAttribute("lessonRequest") LessonRequest lessonRequest) {
         Lesson lesson = lessonService.editLesson(id, lessonRequest);
-        return "redirect:/instructor/course/"+lesson.getChapterByChapterId().getCourseId();
+        return "redirect:/instructor/course/" + lesson.getChapterByChapterId().getCourseId();
     }
 
     @GetMapping("/lesson/delete/{id}")
-    public String deleteLesson(@PathVariable int id){
+    public String deleteLesson(@PathVariable int id) {
         Lesson lesson = lessonRepository.findById(id).get();
         lessonRepository.deleteById(id);
-        return "redirect:/instructor/course/edit"+lesson.getChapterByChapterId().getCourseId();
+        return "redirect:/instructor/course/edit" + lesson.getChapterByChapterId().getCourseId();
     }
 
     @GetMapping("/lesson/{id}")
-    public String showLesson(@PathVariable int id, ModelMap modelMap){
+    public String showLesson(@PathVariable int id, ModelMap modelMap) {
         Lesson lesson = lessonRepository.findById(id).get();
-        modelMap.addAttribute("title",lesson.getTitle());
+        modelMap.addAttribute("title", lesson.getTitle());
         modelMap.addAttribute("lesson", lesson);
         return "instructor.lesson.display";
     }

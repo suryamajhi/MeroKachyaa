@@ -1,4 +1,3 @@
-
 <!-- Content Header (Page header) -->
 <br>
 <div class="container content">
@@ -35,11 +34,13 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form role="form" action="/instructor/blog/edit/${blog.id}" method="post" enctype="multipart/form-data">
+                    <form role="form" action="/instructor/blog/edit/${blog.id}" method="post"
+                          enctype="multipart/form-data">
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Title</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter title" name="title" value="${blog.title}">
+                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                       placeholder="Enter title" name="title" value="${blog.title}">
                             </div>
                             <div class="form-group">
                                 <label for="image">Image</label> <br>
@@ -48,7 +49,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Content</label>
-                                <textarea class="form-control" rows="3" placeholder="Enter ..." name="content" >${blog.content}</textarea>
+                                <textarea class="form-control" rows="3" placeholder="Enter ..."
+                                          name="content">${blog.content}</textarea>
                             </div>
 
                         </div>

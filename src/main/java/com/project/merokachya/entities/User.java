@@ -27,7 +27,7 @@ public class User {
     private List<Review> reviewsById;
 
     private List<Course> courses;
-    
+
     private String base64Image;
 
     @Id
@@ -96,21 +96,29 @@ public class User {
     }
 
     @OneToMany(mappedBy = "userByUserId")
-    public List<Blog> getBlogsById() {return blogsById;}
+    public List<Blog> getBlogsById() {
+        return blogsById;
+    }
 
     public void setBlogsById(List<Blog> blogsById) {
         this.blogsById = blogsById;
     }
-    @OneToMany(mappedBy = "userByUserId")
-    public List<Comment> getCommentsById() {return commentsById;}
 
-    public void setCommentsById(List<Comment> commentsById){
+    @OneToMany(mappedBy = "userByUserId")
+    public List<Comment> getCommentsById() {
+        return commentsById;
+    }
+
+    public void setCommentsById(List<Comment> commentsById) {
         this.commentsById = commentsById;
     }
-    @OneToMany(mappedBy = "userByUserId")
-    public List<CommentReply> getCommentReplyById(){ return commentReplyById;}
 
-    public void setCommentReplyById(List<CommentReply> commentReplyById){
+    @OneToMany(mappedBy = "userByUserId")
+    public List<CommentReply> getCommentReplyById() {
+        return commentReplyById;
+    }
+
+    public void setCommentReplyById(List<CommentReply> commentReplyById) {
         this.commentReplyById = commentReplyById;
     }
 
@@ -143,7 +151,7 @@ public class User {
 
     @Transient
     public String getBase64Image() {
-        if(this.image!=null) return base64Image = Base64.getEncoder().encodeToString(this.image);
+        if (this.image != null) return base64Image = Base64.getEncoder().encodeToString(this.image);
         else return null;
     }
 
@@ -152,7 +160,7 @@ public class User {
     }
 
     @ManyToMany
-    @JoinTable(name = "user_course", joinColumns = @JoinColumn(name ="user_id" ),inverseJoinColumns = @JoinColumn(name = "course_id"))
+    @JoinTable(name = "user_course", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "course_id"))
     public List<Course> getCourses() {
         return courses;
     }

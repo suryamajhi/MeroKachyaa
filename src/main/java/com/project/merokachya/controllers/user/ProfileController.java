@@ -32,20 +32,22 @@ public class ProfileController {
     CourseRepository courseRepository;
 
     @GetMapping("/user/{id}")
-    public String profile(@PathVariable int id, ModelMap modelMap){
-        modelMap.addAttribute("user",userRepository.findById(id).get());
+    public String profile(@PathVariable int id, ModelMap modelMap) {
+        modelMap.addAttribute("user", userRepository.findById(id).get());
         return "home.profile";
     }
+
     @GetMapping("/profile")
-    public String profile(ModelMap modelMap){
+    public String profile(ModelMap modelMap) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         User user = userRepository.findByEmail(authentication.getName());
-        
-        modelMap.addAttribute("user",user);
+
+        modelMap.addAttribute("user", user);
         return "home.profile";
     }
+
     @PostMapping("/profile/edit")
-    public String editUser(@ModelAttribute("profileRequest") ProfileRequest profileRequest){
+    public String editUser(@ModelAttribute("profileRequest") ProfileRequest profileRequest) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         User user = userRepository.findByEmail(authentication.getName());
         profileService.editProfile(user.getId(), profileRequest);

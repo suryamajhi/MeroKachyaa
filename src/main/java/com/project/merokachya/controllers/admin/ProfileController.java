@@ -24,15 +24,16 @@ public class ProfileController {
     ProfileService profileService;
 
     @GetMapping("/profile/{id}")
-    public String viewProfile(@PathVariable int id, ModelMap modelMap){
+    public String viewProfile(@PathVariable int id, ModelMap modelMap) {
         User user = userRepository.findById(id).get();
         modelMap.addAttribute("user", user);
         modelMap.addAttribute("title", user.getName());
         return "admin.profile.index";
     }
+
     @PostMapping("/user/edit/{id}")
-    public String editUser(@PathVariable int id, @ModelAttribute("profileRequest") ProfileRequest profileRequest){
+    public String editUser(@PathVariable int id, @ModelAttribute("profileRequest") ProfileRequest profileRequest) {
         profileService.editProfile(id, profileRequest);
-        return "redirect:/admin/profile/"+id;
+        return "redirect:/admin/profile/" + id;
     }
 }

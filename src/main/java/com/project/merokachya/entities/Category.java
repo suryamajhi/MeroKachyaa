@@ -10,7 +10,7 @@ import java.util.List;
 
 @Entity
 public class Category {
-    
+
     private int id;
     private String name;
     private byte[] image;
@@ -45,7 +45,7 @@ public class Category {
 
     @Transient
     public String getBase64Image() {
-        if(this.image!=null) return base64Image = Base64.getEncoder().encodeToString(this.image);
+        if (this.image != null) return base64Image = Base64.getEncoder().encodeToString(this.image);
         else return null;
     }
 
@@ -63,9 +63,11 @@ public class Category {
     }
 
     @OneToMany(mappedBy = "categoryByCategoryId")
-    public List<Course> getCourseById(){ return coursesById;}
+    public List<Course> getCourseById() {
+        return coursesById;
+    }
 
-    public void setCourseById(List<Course> courseById){
+    public void setCourseById(List<Course> courseById) {
         this.coursesById = courseById;
     }
 }

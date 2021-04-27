@@ -61,7 +61,7 @@ public class Discussion {
     }
 
     @ManyToOne
-    @JoinColumn(name = "lesson_id", referencedColumnName = "id", insertable = false,updatable = false)
+    @JoinColumn(name = "lesson_id", referencedColumnName = "id", insertable = false, updatable = false)
     public Lesson getLessonByLessonId() {
         return lessonByLessonId;
     }
@@ -71,7 +71,7 @@ public class Discussion {
     }
 
     @ManyToOne
-    @JoinColumn(name = "user_id",referencedColumnName = "id", insertable = false,updatable = false)
+    @JoinColumn(name = "user_id", referencedColumnName = "id", insertable = false, updatable = false)
     public User getUserByUserId() {
         return userByUserId;
     }

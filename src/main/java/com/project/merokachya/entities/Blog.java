@@ -61,6 +61,7 @@ public class Blog {
     public void setDate(Date date) {
         this.date = date;
     }
+
     @Column(name = "user_id")
     public Integer getUserId() {
         return userId;
@@ -71,15 +72,19 @@ public class Blog {
     }
 
     @OneToMany(mappedBy = "blogByBlogId")
-    public List<Comment> getCommentsById() { return commentsById; }
+    public List<Comment> getCommentsById() {
+        return commentsById;
+    }
 
-    public void setCommentsById(List<Comment> commentsById){
+    public void setCommentsById(List<Comment> commentsById) {
         this.commentsById = commentsById;
     }
 
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id", insertable = false, updatable = false)
-    public User getUserByUserId() { return userByUserId;}
+    public User getUserByUserId() {
+        return userByUserId;
+    }
 
     public void setUserByUserId(User userByUserId) {
         this.userByUserId = userByUserId;
@@ -99,7 +104,7 @@ public class Blog {
 
     @Transient
     public String getBase64Image() {
-        if(this.image!=null) return base64Image = Base64.getEncoder().encodeToString(this.image);
+        if (this.image != null) return base64Image = Base64.getEncoder().encodeToString(this.image);
         else return null;
     }
 

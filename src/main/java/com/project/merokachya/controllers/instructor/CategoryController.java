@@ -22,9 +22,9 @@ public class CategoryController {
     CategoryService categoryService;
 
     @GetMapping("/category")
-    public String showCategory(ModelMap modelMap){
+    public String showCategory(ModelMap modelMap) {
         List<Category> categories = categoryRepository.findAll();
-        modelMap.addAttribute("title","Category");
+        modelMap.addAttribute("title", "Category");
         modelMap.addAttribute("categories", categories);
         return "instructor.category.index";
     }

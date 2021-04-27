@@ -19,12 +19,12 @@ public class LoginController {
     SecurityService securityService;
 
     @GetMapping("/login")
-    public String showLogin(){
+    public String showLogin() {
         return "authentication.login";
     }
 
     @GetMapping("/403")
-    public String accessDeny(){
+    public String accessDeny() {
         return "authentication.noaccess";
     }
 }

@@ -23,17 +23,17 @@ public class ReviewController {
 
 
     @GetMapping("/course/{id}/review")
-    public String showReview(@PathVariable int id, ModelMap modelMap){
+    public String showReview(@PathVariable int id, ModelMap modelMap) {
         List<Review> reviews = reviewRepository.findAllByCourseId(id);
         modelMap.addAttribute("reviews", reviews);
-        modelMap.addAttribute("title","Reviews");
-        modelMap.addAttribute("course",courseRepository.findById(id).get());
+        modelMap.addAttribute("title", "Reviews");
+        modelMap.addAttribute("course", courseRepository.findById(id).get());
         return "instructor.review.index";
     }
 
     @GetMapping("/course/{courseId}/review/delete/{id}")
-    public String delete(@PathVariable int id,@PathVariable int courseId){
+    public String delete(@PathVariable int id, @PathVariable int courseId) {
         reviewRepository.deleteById(id);
-        return "redirect:/instructor/course/"+courseId+"/review";
+        return "redirect:/instructor/course/" + courseId + "/review";
     }
 }

@@ -1,5 +1,5 @@
 <%@page language="java" contentType="text/html; ISO-8859-1" isELIgnored="false" %>
-<%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
+<%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <%@taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -8,7 +8,8 @@
 <div class="hero-area section">
 
     <!-- Backgound Image -->
-    <div class="bg-image bg-parallax overlay" style="background-image:url(.${pageContext.request.contextPath}/resources/assets/user/assets/img/page-background.jpg)"></div>
+    <div class="bg-image bg-parallax overlay"
+         style="background-image:url(.${pageContext.request.contextPath}/resources/assets/user/assets/img/page-background.jpg)"></div>
     <!-- /Backgound Image -->
 
     <div class="container">
@@ -52,7 +53,8 @@
                                 </div>
                                 <h4><a href="/course/${course.id}">${course.name}</a></h4>
                                 <div class="blog-meta">
-                                    <span class="blog-meta-author">By: <a href="#">${course.userByUserId.name}</a></span>
+                                    <span class="blog-meta-author">By: <a
+                                            href="#">${course.userByUserId.name}</a></span>
                                     <div class="pull-right">
                                         <span class="blog-meta-comments"><a href="#"><i class="fa fa-comments"></i> 35 students</a></span>
                                     </div>

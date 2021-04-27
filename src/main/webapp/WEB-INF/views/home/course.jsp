@@ -1,5 +1,5 @@
 <%@page language="java" contentType="text/html; ISO-8859-1" isELIgnored="false" %>
-<%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
+<%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <%@taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -8,7 +8,8 @@
 <div class="hero-area section">
 
     <!-- Backgound Image -->
-    <div class="bg-image bg-parallax overlay" style="background-image:url(.${pageContext.request.contextPath}/resources/assets/user/assets/img/page-background.jpg)"></div>
+    <div class="bg-image bg-parallax overlay"
+         style="background-image:url(.${pageContext.request.contextPath}/resources/assets/user/assets/img/page-background.jpg)"></div>
     <!-- /Backgound Image -->
 
     <div class="container">
@@ -80,7 +81,8 @@
                                 <img src="data:image/jpg;base64,${review.userByUserId.base64Image}" alt="">
                             </div>
                             <div class="media-body">
-                                <h4 class="media-heading">${review.userByUserId.name} <span class="info float-right">${review.star} star</span></h4>
+                                <h4 class="media-heading">${review.userByUserId.name} <span
+                                        class="info float-right">${review.star} star</span></h4>
                                 <p>${review.content}</p>
                                 <div class="date-reply"><span>${review.date}</span></div>
                             </div>
@@ -93,7 +95,7 @@
                         <form action="/course/${course.id}/review" method="post">
                             <label for="rate">Rate:</label>
                             <input id="rate" type="number" min="1" max="5" name="star">
-                            <textarea class="input" name="content" placeholder="Enter your Message" ></textarea>
+                            <textarea class="input" name="content" placeholder="Enter your Message"></textarea>
                             <button class="main-button icon-button" type="submit">Submit</button>
                         </form>
                     </div>

@@ -8,7 +8,8 @@
         <div class="row">
             <div class="col-12">
                 <div>
-                    <button class="btn btn-primary"><a style="color:white;" href="/admin/blog/new">Add New Blog</a></button>
+                    <button class="btn btn-primary"><a style="color:white;" href="/admin/blog/new">Add New Blog</a>
+                    </button>
                 </div>
                 <div class="card">
                     <div class="card-header">
@@ -16,7 +17,8 @@
 
                         <div class="card-tools">
                             <div class="input-group input-group-sm" style="width: 150px;">
-                                <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                                <input type="text" name="table_search" class="form-control float-right"
+                                       placeholder="Search">
 
                                 <div class="input-group-append">
                                     <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
@@ -44,7 +46,8 @@
                                     <td>${blog.userByUserId.name}</td>
                                     <c:choose>
                                         <c:when test="${blog.base64Image!=null}">
-                                            <td><img src="data:image/jpg;base64,${blog.base64Image}" alt="" width="75"></td>
+                                            <td><img src="data:image/jpg;base64,${blog.base64Image}" alt="" width="75">
+                                            </td>
                                         </c:when>
                                         <c:otherwise>
                                             <td>No Cover Image</td>
@@ -52,9 +55,13 @@
                                     </c:choose>
 
                                     <td>${blog.date}</td>
-                                    <td><a href="/blog/${blog.id}"><button class="btn btn-primary btn-sm">View blog</button></a></td>
-                                    <td><a class="btn btn-primary btn-sm" href="/admin/blog/edit/${blog.id}">Edit</a></td>
-                                    <td><a class="btn btn-danger btn-sm" href="/admin/blog/delete/${blog.id}">Delete</a></td>
+                                    <td><a href="/blog/${blog.id}">
+                                        <button class="btn btn-primary btn-sm">View blog</button>
+                                    </a></td>
+                                    <td><a class="btn btn-primary btn-sm" href="/admin/blog/edit/${blog.id}">Edit</a>
+                                    </td>
+                                    <td><a class="btn btn-danger btn-sm" href="/admin/blog/delete/${blog.id}">Delete</a>
+                                    </td>
                                 </tr>
                             </c:forEach>
 

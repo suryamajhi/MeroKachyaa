@@ -16,7 +16,7 @@ public class MessageController {
     MessageRepository messageRepository;
 
     @PostMapping("/message")
-    public String message(@ModelAttribute Message message){
+    public String message(@ModelAttribute Message message) {
         java.sql.Date date = new java.sql.Date(Calendar.getInstance().getTime().getTime());
         message.setDate(date);
         messageRepository.save(message);

@@ -23,16 +23,17 @@ public class CategoryController {
     BlogRepository blogRepository;
 
     @GetMapping("/category")
-    public String category(ModelMap modelMap){
-        modelMap.addAttribute("categories",categoryRepository.findAll());
-        modelMap.addAttribute("blogs",blogRepository.findAll());
+    public String category(ModelMap modelMap) {
+        modelMap.addAttribute("categories", categoryRepository.findAll());
+        modelMap.addAttribute("blogs", blogRepository.findAll());
         return "home.category";
     }
+
     @GetMapping("/category/{id}")
-    public String courses(@PathVariable int id, ModelMap modelMap){
-        modelMap.addAttribute("category",categoryRepository.findById(id).get());
+    public String courses(@PathVariable int id, ModelMap modelMap) {
+        modelMap.addAttribute("category", categoryRepository.findById(id).get());
         modelMap.addAttribute("blogs", blogRepository.findAll());
-        modelMap.addAttribute("categories",categoryRepository.findAll());
+        modelMap.addAttribute("categories", categoryRepository.findAll());
         return "home.category.course";
     }
 }

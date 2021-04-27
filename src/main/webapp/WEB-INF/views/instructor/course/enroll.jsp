@@ -13,7 +13,8 @@
 
                         <div class="card-tools">
                             <div class="input-group input-group-sm" style="width: 150px;">
-                                <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                                <input type="text" name="table_search" class="form-control float-right"
+                                       placeholder="Search">
 
                                 <div class="input-group-append">
                                     <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
@@ -40,10 +41,13 @@
                                     <td>${user.id}</td>
                                     <c:choose>
                                         <c:when test="${user.image!=null}">
-                                            <td> <img src="data:image/jpg;base64,${user.base64Image}" class="img-size-50 img-circle mr-3" alt=""></td>
+                                            <td><img src="data:image/jpg;base64,${user.base64Image}"
+                                                     class="img-size-50 img-circle mr-3" alt=""></td>
                                         </c:when>
                                         <c:otherwise>
-                                            <td><img src="${pageContext.request.contextPath}/resources/admin/assets/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3"></td>
+                                            <td><img
+                                                    src="${pageContext.request.contextPath}/resources/admin/assets/dist/img/user3-128x128.jpg"
+                                                    alt="User Avatar" class="img-size-50 img-circle mr-3"></td>
                                         </c:otherwise>
                                     </c:choose>
 
@@ -52,7 +56,8 @@
                                     <th>${user.address}</th>
 
                                     <th><a href="/profile/${user.id}" class="btn btn-primary">View Profile</a></th>
-                                    <td><a class="btn btn-danger" href="/admin/course/${courseId}/unenroll/${user.id}">Unenroll</a></td>
+                                    <td><a class="btn btn-danger" href="/admin/course/${courseId}/unenroll/${user.id}">Unenroll</a>
+                                    </td>
                                 </tr>
                             </c:forEach>
 

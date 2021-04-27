@@ -39,11 +39,11 @@ public class CourseServiceImpl implements CourseService {
 
         MultipartFile image = courseRequest.getImage();
 
-        if(image != null && !isEmpty(image.getOriginalFilename())){
-            String fileName  = StringUtils.cleanPath(image.getOriginalFilename());
+        if (image != null && !isEmpty(image.getOriginalFilename())) {
+            String fileName = StringUtils.cleanPath(image.getOriginalFilename());
 
-            try{
-                if(fileName.contains("..")){
+            try {
+                if (fileName.contains("..")) {
                     throw new IOException("Sorry!Filename contains invalid path sequence");
                 }
                 course.setImage(image.getBytes());
@@ -52,7 +52,7 @@ public class CourseServiceImpl implements CourseService {
             } catch (IOException exception) {
                 exception.printStackTrace();
             }
-        }else{
+        } else {
             courseRepository.save(course);
         }
         return courseRepository.findByName(course.getName());
@@ -67,11 +67,11 @@ public class CourseServiceImpl implements CourseService {
 
         MultipartFile image = courseRequest.getImage();
 
-        if(image != null && !isEmpty(image.getOriginalFilename())){
-            String fileName  = StringUtils.cleanPath(image.getOriginalFilename());
+        if (image != null && !isEmpty(image.getOriginalFilename())) {
+            String fileName = StringUtils.cleanPath(image.getOriginalFilename());
 
-            try{
-                if(fileName.contains("..")){
+            try {
+                if (fileName.contains("..")) {
                     throw new IOException("Sorry!Filename contains invalid path sequence");
                 }
                 course.setImage(image.getBytes());
@@ -80,7 +80,7 @@ public class CourseServiceImpl implements CourseService {
             } catch (IOException exception) {
                 exception.printStackTrace();
             }
-        }else{
+        } else {
             courseRepository.save(course);
         }
         return courseRepository.findById(id).get();

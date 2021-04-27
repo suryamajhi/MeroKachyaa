@@ -25,12 +25,12 @@ public class RegistrationController {
     BCryptPasswordEncoder encoder;
 
     @GetMapping("/register")
-    public String showRegister(){
+    public String showRegister() {
         return "authentication.register";
     }
 
     @PostMapping("/register")
-    public String register(@ModelAttribute("user") User user){
+    public String register(@ModelAttribute("user") User user) {
 
         user.setPassword(encoder.encode(user.getPassword()));
         userRepository.save(user);

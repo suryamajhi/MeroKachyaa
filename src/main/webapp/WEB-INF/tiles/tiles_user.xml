@@ -33,7 +33,6 @@
     </definition>
 
 
-
     <definition name="home.contact" extends="template_user">
         <put-attribute name="content" value="/WEB-INF/views/home/contact.jsp"/>
     </definition>
@@ -44,5 +43,8 @@
         <put-attribute name="content" value="/WEB-INF/views/home/about.jsp"/>
     </definition>
 
+    <definition name="home.aptitude" extends="template_user">
+        <put-attribute name="content" value="/WEB-INF/views/home/aptitude-test.jsp" />
+    </definition>
 
 </tiles-definitions>

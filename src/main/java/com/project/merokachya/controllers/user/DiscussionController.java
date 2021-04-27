@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.sql.Date;
 import java.util.Calendar;
 
-@Controller(value="userDiscussionController")
+@Controller(value = "userDiscussionController")
 public class DiscussionController {
 
     @Autowired
@@ -34,7 +34,7 @@ public class DiscussionController {
 
 
     @PostMapping("/lesson/{lessonId}/discussion")
-    public String add(@PathVariable int lessonId, @RequestParam String content){
+    public String add(@PathVariable int lessonId, @RequestParam String content) {
         Discussion discussion = new Discussion();
         discussion.setContent(content);
         discussion.setLessonId(lessonId);
@@ -49,25 +49,26 @@ public class DiscussionController {
 
         int courseId = lessonRepository.findById(lessonId).get().getChapterByChapterId().getCourseId();
 
-        return "redirect:/course/"+courseId+"/detail";
+        return "redirect:/course/" + courseId + "/detail";
     }
 
 
 //    Also for discussion Reply
 
     @PostMapping("/discussion/{id}/reply")
-    public String addReply(@PathVariable int id, @RequestParam String content){
+    public String addReply(@PathVariable int id, @RequestParam String content) {
         DiscussionReply reply = new DiscussionReply();
         reply.setContent(content);
         reply.setDiscussionId(id);
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         User user = userRepository.findByEmail(username);
-        reply.setUserId(user.getId());        reply.setDate(new Date(Calendar.getInstance().getTime().getTime()));
+        reply.setUserId(user.getId());
+        reply.setDate(new Date(Calendar.getInstance().getTime().getTime()));
 
         discussionReplyRepository.save(reply);
 
         int courseId = discussionRepository.findById(id).get().getLessonByLessonId().getChapterByChapterId().getCourseId();
 
-        return "redirect:/course/"+courseId+"/detail";
+        return "redirect:/course/" + courseId + "/detail";
     }
 }

@@ -49,11 +49,13 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Title</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter title" name="title" value="${lesson.title}">
+                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                       placeholder="Enter title" name="title" value="${lesson.title}">
                             </div>
                             <div class="form-group">
                                 <label for="">Content</label>
-                                <textarea class="form-control" rows="5" placeholder="Enter ..." name="content">${lesson.content}</textarea>
+                                <textarea class="form-control" rows="5" placeholder="Enter ..."
+                                          name="content">${lesson.content}</textarea>
                             </div>
 
                         </div>

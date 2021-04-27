@@ -11,16 +11,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@Controller(value="userReviewController")
+@Controller(value = "userReviewController")
 public class ReviewController {
 
     @Autowired
     ReviewRepository reviewRepository;
     @Autowired
     UserRepository userRepository;
-    
+
     @PostMapping("/course/{courseId}/review")
-    public String addReview(@PathVariable int courseId, @RequestParam("content") String content,@RequestParam("star") int star){
+    public String addReview(@PathVariable int courseId, @RequestParam("content") String content, @RequestParam("star") int star) {
         Review review = new Review();
         review.setContent(content);
         review.setStar(star);
@@ -30,8 +30,8 @@ public class ReviewController {
         review.setCourseId(courseId);
 
         reviewRepository.save(review);
-        return "redirect:/course/"+courseId;
+        return "redirect:/course/" + courseId;
 
     }
-    
+
 }

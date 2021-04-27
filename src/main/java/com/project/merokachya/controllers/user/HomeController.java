@@ -12,9 +12,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@Controller(value="userHomeController")
+@Controller(value = "userHomeController")
 public class HomeController {
-    
+
     @Autowired
     CourseRepository courseRepository;
 
@@ -23,14 +23,14 @@ public class HomeController {
     UserDetailsService userDetailsService;
 
     @GetMapping("/")
-    public String home(ModelMap modelMap){
-        modelMap.addAttribute("courses",courseRepository.findAll());
-        modelMap.addAttribute("title","Home");
+    public String home(ModelMap modelMap) {
+        modelMap.addAttribute("courses", courseRepository.findAll());
+        modelMap.addAttribute("title", "Home");
         return "home.index";
     }
 
     @GetMapping("/about")
-    public String about(){
+    public String about() {
         return "home.about";
     }
 

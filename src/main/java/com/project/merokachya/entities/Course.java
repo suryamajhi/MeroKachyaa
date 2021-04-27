@@ -77,18 +77,22 @@ public class Course {
     }
 
     @ManyToOne
-    @JoinColumn(name = "user_id",referencedColumnName = "id",insertable = false,updatable = false)
-    public User getUserByUserId() { return userByUserId; }
+    @JoinColumn(name = "user_id", referencedColumnName = "id", insertable = false, updatable = false)
+    public User getUserByUserId() {
+        return userByUserId;
+    }
 
-    public void setUserByUserId(User userByUserId){
+    public void setUserByUserId(User userByUserId) {
         this.userByUserId = userByUserId;
     }
 
     @ManyToOne
-    @JoinColumn(name = "category_id", referencedColumnName = "id", insertable = false,updatable = false)
-    public Category getCategoryByCategoryId(){return categoryByCategoryId;}
+    @JoinColumn(name = "category_id", referencedColumnName = "id", insertable = false, updatable = false)
+    public Category getCategoryByCategoryId() {
+        return categoryByCategoryId;
+    }
 
-    public void setCategoryByCategoryId(Category categoryByCategoryId){
+    public void setCategoryByCategoryId(Category categoryByCategoryId) {
         this.categoryByCategoryId = categoryByCategoryId;
     }
 
@@ -112,7 +116,7 @@ public class Course {
 
     @Transient
     public String getBase64Image() {
-        if(this.image!=null) return Base64.getEncoder().encodeToString(this.image);
+        if (this.image != null) return Base64.getEncoder().encodeToString(this.image);
         return null;
     }
 
@@ -121,7 +125,7 @@ public class Course {
     }
 
     @ManyToMany
-    @JoinTable(name = "user_course", joinColumns = @JoinColumn(name = "course_id"),inverseJoinColumns = @JoinColumn(name = "user_id"))
+    @JoinTable(name = "user_course", joinColumns = @JoinColumn(name = "course_id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
     public List<User> getStudents() {
         return students;
     }

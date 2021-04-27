@@ -27,7 +27,7 @@ public class CommentReplyController {
     UserRepository userRepository;
 
     @PostMapping("/comment/{commentId}/reply")
-    public String reply(@PathVariable int commentId, @RequestParam String content){
+    public String reply(@PathVariable int commentId, @RequestParam String content) {
         Comment comment = commentRepository.findById(commentId).get();
         CommentReply reply = new CommentReply();
         reply.setCommentId(commentId);
@@ -38,7 +38,7 @@ public class CommentReplyController {
         User user = userRepository.findByEmail(username);
         reply.setUserId(user.getId());
         commentReplyRepository.save(reply);
-        return "redirect:/blog/"+comment.getBlogId();
+        return "redirect:/blog/" + comment.getBlogId();
     }
 
 }

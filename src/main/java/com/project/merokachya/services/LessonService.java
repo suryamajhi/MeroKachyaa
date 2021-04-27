@@ -5,5 +5,6 @@ import com.project.merokachya.entities.Lesson;
 
 public interface LessonService {
     Lesson addLesson(LessonRequest lessonRequest);
-    Lesson editLesson(int id,LessonRequest lessonRequest);
+
+    Lesson editLesson(int id, LessonRequest lessonRequest);
 }

@@ -4,7 +4,7 @@
         "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
     <definition name="template_admin" template="/WEB-INF/views/templates/template_admin.jsp">
-        <put-attribute name="content" value="" />
+        <put-attribute name="content" value=""/>
     </definition>
     <definition name="admin.dashboard.index" extends="template_admin">
         <put-attribute name="content" value="/WEB-INF/views/admin/dashboard/index.jsp"/>
@@ -16,13 +16,13 @@
         <put-attribute name="content" value="/WEB-INF/views/admin/category/edit.jsp"/>
     </definition>
     <definition name="admin.blog.index" extends="template_admin">
-        <put-attribute name="content" value="/WEB-INF/views/admin/blog/index.jsp" />
+        <put-attribute name="content" value="/WEB-INF/views/admin/blog/index.jsp"/>
     </definition>
     <definition name="admin.blog.display" extends="template_admin">
-        <put-attribute name="content" value="/WEB-INF/views/admin/blog/blog.jsp" />
+        <put-attribute name="content" value="/WEB-INF/views/admin/blog/blog.jsp"/>
     </definition>
     <definition name="admin.blog.new" extends="template_admin">
-        <put-attribute name="content" value="/WEB-INF/views/admin/blog/new.jsp" />
+        <put-attribute name="content" value="/WEB-INF/views/admin/blog/new.jsp"/>
     </definition>
     <definition name="admin.blog.edit" extends="template_admin">
         <put-attribute name="content" value="/WEB-INF/views/admin/blog/edit.jsp"/>
@@ -70,7 +70,6 @@
     <definition name="admin.message.read" extends="template_admin">
         <put-attribute name="content" value="/WEB-INF/views/admin/mailbox/read.jsp"/>
     </definition>
-
 
 
 </tiles-definitions>

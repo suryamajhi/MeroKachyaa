@@ -21,14 +21,14 @@
             <div class="card-body table-responsive p-0" style="height: 300px;">
                 <table class="table table-head-fixed text-nowrap">
                     <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Image</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Address</th>
-                            
-                        </tr>
+                    <tr>
+                        <th>ID</th>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Address</th>
+
+                    </tr>
                     </thead>
                     <tbody>
                     <c:forEach items="${users}" var="user">
@@ -36,17 +36,20 @@
                             <td>${user.id}</td>
                             <c:choose>
                                 <c:when test="${user.image!=null}">
-                                   <td> <img src="data:image/jpg;base64,${user.base64Image}" class="img-size-50 img-circle mr-3" alt=""></td>
+                                    <td><img src="data:image/jpg;base64,${user.base64Image}"
+                                             class="img-size-50 img-circle mr-3" alt=""></td>
                                 </c:when>
                                 <c:otherwise>
-                                    <td><img src="${pageContext.request.contextPath}/resources/admin/assets/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3"></td>
+                                    <td><img
+                                            src="${pageContext.request.contextPath}/resources/admin/assets/dist/img/user3-128x128.jpg"
+                                            alt="User Avatar" class="img-size-50 img-circle mr-3"></td>
                                 </c:otherwise>
                             </c:choose>
-                            
+
                             <td>${user.name}</td>
                             <td>${user.email}</td>
                             <th>${user.address}</th>
-                            
+
                             <th><a href="/admin/profile/${user.id}" class="btn btn-primary">View Profile</a></th>
                         </tr>
                     </c:forEach>

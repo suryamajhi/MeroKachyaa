@@ -15,7 +15,7 @@ import static org.aspectj.util.LangUtil.isEmpty;
 
 
 @Service
-public class ProfileServiceImpl implements ProfileService{
+public class ProfileServiceImpl implements ProfileService {
 
     @Autowired
     UserRepository userRepository;
@@ -32,11 +32,11 @@ public class ProfileServiceImpl implements ProfileService{
 
         MultipartFile image = profileRequest.getImage();
 
-        if(image!=null && !isEmpty(image.getOriginalFilename())){
+        if (image != null && !isEmpty(image.getOriginalFilename())) {
             String fileName = StringUtils.cleanPath(Objects.requireNonNull(image.getOriginalFilename()));
             System.out.println("IM in");
-            try{
-                if(fileName.contains("..")){
+            try {
+                if (fileName.contains("..")) {
                     throw new IOException("Invalid filename");
                 }
                 user.setImage(image.getBytes());
@@ -44,6 +44,6 @@ public class ProfileServiceImpl implements ProfileService{
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }else userRepository.save(user);
+        } else userRepository.save(user);
     }
 }

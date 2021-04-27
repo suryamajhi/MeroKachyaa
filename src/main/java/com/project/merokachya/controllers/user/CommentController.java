@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Calendar;
 
-@Controller(value="userCommentController")
+@Controller(value = "userCommentController")
 public class CommentController {
 
     @Autowired
@@ -23,7 +23,7 @@ public class CommentController {
     UserRepository userRepository;
 
     @PostMapping("/blog/{blogId}/comment")
-    public String add(@PathVariable int blogId, @RequestParam String content){
+    public String add(@PathVariable int blogId, @RequestParam String content) {
         Comment comment = new Comment();
         comment.setContent(content);
         comment.setBlogId(blogId);
@@ -33,6 +33,6 @@ public class CommentController {
         java.sql.Date date = new java.sql.Date(Calendar.getInstance().getTime().getTime());
         comment.setDate(date);
         commentRepository.save(comment);
-        return "redirect:/blog/"+blogId;
+        return "redirect:/blog/" + blogId;
     }
 }

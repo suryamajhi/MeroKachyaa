@@ -1,4 +1,3 @@
-
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
@@ -33,7 +32,8 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Title</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter title" name="title">
+                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                       placeholder="Enter title" name="title">
                             </div>
                             <div class="form-group">
                                 <label for="image">Image</label>
@@ -41,7 +41,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Content</label>
-                                <textarea class="form-control" rows="5" placeholder="Enter ..." name="content"></textarea>
+                                <textarea class="form-control" rows="5" placeholder="Enter ..."
+                                          name="content"></textarea>
                             </div>
                         </div>
                         <!-- /.card-body -->

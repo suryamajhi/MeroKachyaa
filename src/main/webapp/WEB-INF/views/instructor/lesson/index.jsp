@@ -2,7 +2,6 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 
-
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
@@ -27,7 +26,8 @@
 
                         <div class="card-tools">
                             <div class="input-group input-group-sm" style="width: 150px;">
-                                <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                                <input type="text" name="table_search" class="form-control float-right"
+                                       placeholder="Search">
 
                                 <div class="input-group-append">
                                     <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
@@ -51,9 +51,13 @@
                                     <td>${lesson.id}</td>
                                     <td>${lesson.title}</td>
                                     <td>${lesson.chapterByChapterId.courseByCourseId.name}</td>
-                                    <td><a href="/instructor/lesson/${lesson.id}"><button class="btn btn-primary">View lesson</button></a></td>
-                                    <td><a class="btn btn-primary" href="/instructor/lesson/edit/${lesson.id}">Edit</a></td>
-                                    <td><a class="btn btn-danger" href="/instructor/lesson/delete/${lesson.id}">Delete</a></td>
+                                    <td><a href="/instructor/lesson/${lesson.id}">
+                                        <button class="btn btn-primary">View lesson</button>
+                                    </a></td>
+                                    <td><a class="btn btn-primary" href="/instructor/lesson/edit/${lesson.id}">Edit</a>
+                                    </td>
+                                    <td><a class="btn btn-danger"
+                                           href="/instructor/lesson/delete/${lesson.id}">Delete</a></td>
                                 </tr>
                             </c:forEach>
 

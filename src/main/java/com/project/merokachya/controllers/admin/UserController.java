@@ -19,14 +19,14 @@ public class UserController {
     UserRepository userRepository;
 
     @GetMapping("/users/all")
-    public String allUsers(ModelMap modelMap){
+    public String allUsers(ModelMap modelMap) {
         List<User> users = userRepository.findAll();
         modelMap.addAttribute("users", users);
         return "admin.users.all";
     }
 
     @GetMapping("/user/delete/{id}")
-    public String deleteUser(@PathVariable int id){
+    public String deleteUser(@PathVariable int id) {
         userRepository.deleteById(id);
         return "redirect:/admin/users/all";
     }

@@ -37,11 +37,11 @@ public class BlogServiceImpl implements BlogService {
 
         MultipartFile image = blogRequest.getImage();
 
-        if(image != null && !isEmpty(image.getOriginalFilename())){
-            String fileName  = StringUtils.cleanPath(image.getOriginalFilename());
+        if (image != null && !isEmpty(image.getOriginalFilename())) {
+            String fileName = StringUtils.cleanPath(image.getOriginalFilename());
 
-            try{
-                if(fileName.contains("..")){
+            try {
+                if (fileName.contains("..")) {
                     throw new IOException("Sorry!Filename contains invalid path sequence");
                 }
                 blog.setImage(image.getBytes());
@@ -50,7 +50,7 @@ public class BlogServiceImpl implements BlogService {
             } catch (IOException exception) {
                 exception.printStackTrace();
             }
-        }else{
+        } else {
             blogRepository.save(blog);
         }
     }
@@ -63,11 +63,11 @@ public class BlogServiceImpl implements BlogService {
 
         MultipartFile image = blogRequest.getImage();
 
-        if(image != null && !isEmpty(image.getOriginalFilename())){
-            String fileName  = StringUtils.cleanPath(image.getOriginalFilename());
+        if (image != null && !isEmpty(image.getOriginalFilename())) {
+            String fileName = StringUtils.cleanPath(image.getOriginalFilename());
 
-            try{
-                if(fileName.contains("..")){
+            try {
+                if (fileName.contains("..")) {
                     throw new IOException("Sorry!Filename contains invalid path sequence");
                 }
                 blog.setImage(image.getBytes());
@@ -76,7 +76,7 @@ public class BlogServiceImpl implements BlogService {
             } catch (IOException exception) {
                 exception.printStackTrace();
             }
-        }else{
+        } else {
             blogRepository.save(blog);
         }
     }

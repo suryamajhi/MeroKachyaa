@@ -19,12 +19,12 @@ public class ReviewServiceImpl implements ReviewService {
         List<Review> reviews = reviewRepository.findAllByCourseId(courseId);
         int average = 0;
         int count = 0;
-        for (Review review:
-             reviews) {
+        for (Review review :
+                reviews) {
             int star = review.getStar();
             average += star;
             count++;
         }
-        return (double)average/count;
+        return (double) average / count;
     }
 }

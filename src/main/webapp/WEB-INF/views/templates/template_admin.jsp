@@ -1,5 +1,5 @@
 <%@page language="java" contentType="text/html; ISO-8859-1" isELIgnored="false" %>
-<%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
+<%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <%@taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -14,23 +14,31 @@
 
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/admin/assets/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet"
+          href="${pageContext.request.contextPath}/resources/assets/admin/assets/plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bbootstrap 4 -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/admin/assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet"
+          href="${pageContext.request.contextPath}/resources/assets/admin/assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
     <!-- iCheck -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/admin/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet"
+          href="${pageContext.request.contextPath}/resources/assets/admin/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- JQVMap -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/admin/assets/plugins/jqvmap/jqvmap.min.css">
+    <link rel="stylesheet"
+          href="${pageContext.request.contextPath}/resources/assets/admin/assets/plugins/jqvmap/jqvmap.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/admin/assets/dist/css/adminlte.min.css">
+    <link rel="stylesheet"
+          href="${pageContext.request.contextPath}/resources/assets/admin/assets/dist/css/adminlte.min.css">
     <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/admin/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet"
+          href="${pageContext.request.contextPath}/resources/assets/admin/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Daterange picker -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/assets/plugins/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet"
+          href="${pageContext.request.contextPath}/resources/assets/assets/plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/asets/admin/assets/plugins/summernote/summernote-bs4.css">
+    <link rel="stylesheet"
+          href="${pageContext.request.contextPath}/resources/asets/admin/assets/plugins/summernote/summernote-bs4.css">
 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/assets/custom/css/image.css">
     <!-- Google Font: Source Sans Pro -->
@@ -78,7 +86,8 @@
                     <a href="#" class="dropdown-item">
                         <!-- Message Start -->
                         <div class="media">
-                            <img src="${pageContext.request.contextPath}/resources/admin/assets/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                            <img src="${pageContext.request.contextPath}/resources/admin/assets/dist/img/user1-128x128.jpg"
+                                 alt="User Avatar" class="img-size-50 mr-3 img-circle">
                             <div class="media-body">
                                 <h3 class="dropdown-item-title">
                                     Brad Diesel
@@ -94,7 +103,8 @@
                     <a href="#" class="dropdown-item">
                         <!-- Message Start -->
                         <div class="media">
-                            <img src="${pageContext.request.contextPath}/resources/admin/assets/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                            <img src="${pageContext.request.contextPath}/resources/admin/assets/dist/img/user8-128x128.jpg"
+                                 alt="User Avatar" class="img-size-50 img-circle mr-3">
                             <div class="media-body">
                                 <h3 class="dropdown-item-title">
                                     John Pierce
@@ -110,7 +120,8 @@
                     <a href="#" class="dropdown-item">
                         <!-- Message Start -->
                         <div class="media">
-                            <img src="${pageContext.request.contextPath}/resources/admin/assets/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                            <img src="${pageContext.request.contextPath}/resources/admin/assets/dist/img/user3-128x128.jpg"
+                                 alt="User Avatar" class="img-size-50 img-circle mr-3">
                             <div class="media-body">
                                 <h3 class="dropdown-item-title">
                                     Nora Silvester
@@ -153,9 +164,17 @@
                     <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
                 </div>
             <li class="nav-item dropdown no-arrow">
-                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">${user.name}</span><img width="35" class="border rounded-circle img-profile" src="${pageContext.request.contextPath}/resources/admin/assets/dist/img/user2-160x160.jpg"></a>
-                    <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in"><a class="dropdown-item" href="/admin/profile?id=${user.id}"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a>
-                        <div class="dropdown-divider"></div><a class="dropdown-item" href="/"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a></div>
+                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown"
+                                                           aria-expanded="false" href="#"><span
+                        class="d-none d-lg-inline mr-2 text-gray-600 small">${user.name}</span><img width="35"
+                                                                                                    class="border rounded-circle img-profile"
+                                                                                                    src="${pageContext.request.contextPath}/resources/admin/assets/dist/img/user2-160x160.jpg"></a>
+                    <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in"><a class="dropdown-item"
+                                                                                               href="/admin/profile?id=${user.id}"><i
+                            class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/"><i
+                                class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a></div>
                 </div>
             </li>
         </ul>
@@ -166,7 +185,8 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="/admin" class="brand-link">
-            <img src="${pageContext.request.contextPath}/resources/assets/admin/assets/dist/img/logo-alt.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+            <img src="${pageContext.request.contextPath}/resources/assets/admin/assets/dist/img/logo-alt.png"
+                 alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                  style="opacity: .8">
             <span class="brand-text font-weight-light">Admin</span>
         </a>
@@ -176,7 +196,8 @@
 
             <!-- Sidebar Menu -->
             <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                    data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
                     <li class="nav-item has-treeview menu-open">
@@ -232,7 +253,7 @@
                             </li>
                         </ul>
                     </li>
-                    
+
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-user-circle"></i>
@@ -309,7 +330,6 @@
                             </li>
                         </ul>
                     </li>
-
 
 
                     <li class="nav-item has-treeview">

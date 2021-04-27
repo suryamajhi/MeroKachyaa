@@ -12,14 +12,14 @@ import org.springframework.web.servlet.view.tiles3.TilesView;
 public class TilesConfiguration implements WebMvcConfigurer {
 
     @Bean
-    public UrlBasedViewResolver urlBasedViewResolver(){
+    public UrlBasedViewResolver urlBasedViewResolver() {
         UrlBasedViewResolver resolver = new UrlBasedViewResolver();
         resolver.setViewClass(TilesView.class);
         return resolver;
     }
 
     @Bean
-    public TilesConfigurer tilesConfigurer(){
+    public TilesConfigurer tilesConfigurer() {
         TilesConfigurer configurer = new TilesConfigurer();
         configurer.setDefinitions(
                 "/WEB-INF/tiles/tiles_user.xml",

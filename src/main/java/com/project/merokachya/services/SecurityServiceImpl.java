@@ -10,7 +10,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SecurityServiceImpl implements SecurityService{
+public class SecurityServiceImpl implements SecurityService {
 
     @Qualifier("userDetailsServiceImpl")
     @Autowired
@@ -30,7 +30,7 @@ public class SecurityServiceImpl implements SecurityService{
 
         boolean result = token.isAuthenticated();
         System.out.println("token authenticated" + result);
-        if(result)
+        if (result)
             SecurityContextHolder.getContext().setAuthentication(token);
 
         return result;

@@ -58,7 +58,7 @@ public class Lesson {
     }
 
     @ManyToOne
-    @JoinColumn(name = "chapter_id", referencedColumnName = "id",insertable = false, updatable = false)
+    @JoinColumn(name = "chapter_id", referencedColumnName = "id", insertable = false, updatable = false)
     public Chapter getChapterByChapterId() {
         return chapterByChapterId;
     }

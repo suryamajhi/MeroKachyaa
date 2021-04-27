@@ -22,34 +22,35 @@ public class CategoryController {
     CategoryService categoryService;
 
     @GetMapping("/category")
-    public String showCategory(ModelMap modelMap){
+    public String showCategory(ModelMap modelMap) {
         List<Category> categories = categoryRepository.findAll();
-        modelMap.addAttribute("title","Category");
+        modelMap.addAttribute("title", "Category");
         modelMap.addAttribute("categories", categories);
         return "admin.category.index";
     }
 
     @PostMapping("/category/add")
-    public String addCategory(@ModelAttribute("categoryRequest") CategoryRequest category){
+    public String addCategory(@ModelAttribute("categoryRequest") CategoryRequest category) {
         categoryService.addCategory(category);
         return "redirect:/admin/category";
     }
+
     @GetMapping("/category/edit/{id}")
-    public String showEditCategory(@PathVariable int id,ModelMap modelMap){
+    public String showEditCategory(@PathVariable int id, ModelMap modelMap) {
         Category category = categoryRepository.findById(id).get();
         modelMap.addAttribute("category", category);
-        modelMap.addAttribute("title","Edit Category");
+        modelMap.addAttribute("title", "Edit Category");
         return "admin.category.edit";
     }
 
     @PostMapping("/category/edit/{id}")
-    public String editCategory(@PathVariable int id, @ModelAttribute("categoryRequest") CategoryRequest category){
+    public String editCategory(@PathVariable int id, @ModelAttribute("categoryRequest") CategoryRequest category) {
         categoryService.editCategory(id, category);
         return "redirect:/admin/category";
     }
 
     @GetMapping("/category/delete/{id}")
-    public String deleteCategory(@PathVariable int id){
+    public String deleteCategory(@PathVariable int id) {
         categoryRepository.deleteById(id);
         return "redirect:/admin/category";
     }

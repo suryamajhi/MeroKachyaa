@@ -38,6 +38,7 @@ public class CommentReply {
     public void setDate(Date date) {
         this.date = date;
     }
+
     @Column(name = "comment_id")
     public Integer getCommentId() {
         return commentId;
@@ -46,6 +47,7 @@ public class CommentReply {
     public void setCommentId(Integer commentId) {
         this.commentId = commentId;
     }
+
     @Column(name = "user_id")
     public Integer getUserId() {
         return userId;

@@ -1,4 +1,4 @@
-var position = { lat: 40.730610 , lng: -73.935242 }	
+var position = {lat: 40.730610, lng: -73.935242}
 
 // Map style
 var style = [
@@ -198,16 +198,16 @@ var style = [
 
 // Set google map options
 var options = {
-	center: position,
-	zoom: 14,
-	mapTypeControl: false,
-	streetViewControl: false,
-	scrollwheel: false,
-	styles: style
+    center: position,
+    zoom: 14,
+    mapTypeControl: false,
+    streetViewControl: false,
+    scrollwheel: false,
+    styles: style
 }
 
 // Init Map
-var map = new google.maps.Map( document.getElementById('contact-map') , options);
+var map = new google.maps.Map(document.getElementById('contact-map'), options);
 
 // Set map marker
 var marker = new google.maps.Marker({

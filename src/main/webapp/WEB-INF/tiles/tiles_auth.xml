@@ -10,6 +10,6 @@
         <put-attribute name="content" value="/WEB-INF/views/authentication/login.jsp"/>
     </definition>
     <definition name="authentication.register" extends="template_auth">
-        <put-attribute name="content" value="/WEB-INF/views/authentication/register.jsp" />
+        <put-attribute name="content" value="/WEB-INF/views/authentication/register.jsp"/>
     </definition>
 </tiles-definitions>

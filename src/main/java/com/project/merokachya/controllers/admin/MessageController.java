@@ -17,18 +17,19 @@ public class MessageController {
     MessageRepository messageRepository;
 
     @GetMapping("/messages")
-    public String inbox(ModelMap modelMap){
+    public String inbox(ModelMap modelMap) {
         modelMap.addAttribute("messages", messageRepository.findAll());
         return "admin.message.index";
 
     }
+
     @GetMapping("/message/compose")
-    public String compose(){
+    public String compose() {
         return "admin.message.compose";
     }
 
     @GetMapping("/message/{id}")
-    public String read(@PathVariable int id, ModelMap modelMap){
+    public String read(@PathVariable int id, ModelMap modelMap) {
         modelMap.addAttribute("message", messageRepository.findById(id).get());
         return "admin.message.read";
     }
