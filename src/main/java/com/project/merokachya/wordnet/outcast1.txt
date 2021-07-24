@@ -1,0 +1,2 @@
+orange,banana,body,apple
+table,apple,chair
