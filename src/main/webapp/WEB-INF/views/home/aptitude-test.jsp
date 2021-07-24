@@ -16,9 +16,9 @@
             <div class="col-md-10 col-md-offset-1 text-center">
                 <ul class="hero-area-tree">
                     <li><a href="/">Home</a></li>
-                    <li>Test</li>
+                    <li>Aptitude Test</li>
                 </ul>
-                <h1 class="white-text">Aptitude Test</h1>
+                <h1 class="white-text">WordNet Quiz</h1>
 
             </div>
         </div>
@@ -30,34 +30,39 @@
     <div class="container">
         <div id="main" class="col-md-12">
 
-            <form action="" method="post" class="form-group" style="display: block;">
-        <%--    question--%>
-                <div class="col-md-8 card">
-                    <div class="card-header">
-                        Q1 : Choose the out cast
-                    </div>
-                    <div class="card-body">
-                        <label style="display: block;" for="">
-                            <input type="radio" name="q1"> Apple
-                        </label>
-                        <label style="display: block;" for="">
-                            <input type="radio" name="q1"> Mango
-                        </label>
-                        <label style="display: block;" for="">
-                            <input type="radio" name="q1"> Orange
-                        </label>
-                        <label style="display: block;" for="">
-                            <input type="radio" name="q1"> Table
-                        </label>
+            <c:choose>
+                <c:when test="${response}">
+                    Your score is <c:out value="${score}"/> <br>
+                    <c:forEach items="${answers.entrySet()}" var="map">
+                        ${map.getKey()} ${map.getValue()} <br>
+                    </c:forEach>
+                </c:when>
+                <c:otherwise>
+                    <form action="" method="post" class="form-group" style="display: block;">
+                            <%--    question--%>
+                        <c:forEach var="question" items="${lists}" >
+                            <div class="col-md-8 card">
+                                <div class="card-header">
+                                    Q1 : Choose the out cast
+                                </div>
+                                <div class="card-body">
+                                    <c:forEach var="q" items="${question.options}">
+                                        <label style="display: block;" for="">
+                                            <input type="radio" name="${question.index}" value="${q}"> ${q}
+                                        </label>
+                                    </c:forEach>
+                                </div>
+                            </div>
+                        </c:forEach>
+
+                        <div class="col-md-8 form" style="display: block">
+                            <input type="submit" value="Submit Answers">
+                        </div>
+                    </form>
+                </c:otherwise>
+            </c:choose>
 
 
-                    </div>
-                </div>
-
-            <div class="col-md-8 form" style="display: block">
-                <input type="submit" value="Submit Answers">
-            </div>
-            </form>
         </div>
     </div>
 

@@ -26,8 +26,6 @@ public class SAP {
         Integer commonVertex = getCommonVertex(v, w);
         if (commonVertex == null) return -1;
         return path1.distTo(commonVertex) + path2.distTo(commonVertex);
-
-
     }
 
     // a common ancestor of v and w that participates in a shortest ancestral path; -1 if no such path
